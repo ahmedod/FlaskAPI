@@ -16,6 +16,8 @@ services:
     networks:
       - frontend
       - backend
+    ports:
+      - "5000:5000"
   mongodb:
     image: mongo:4.0.8
     container_name: mongo
@@ -27,24 +29,24 @@ services:
       - "./mongo/container_logs/mongo/log:/var/log/mongodb"
     networks:
       - backend
-  webserver:
-    build:
-      context: nginx
-      dockerfile: Dockerfile
-    image: digitalocean.com/webserver:latest
-    container_name: webserver
-    restart: unless-stopped
-    env_file: 
-        - global_dev.env
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - nginxdata:/var/log/nginx
-    depends_on:
-      - flask
-    networks:
-      - frontend
+#  webserver:
+#    build:
+#      context: nginx
+#      dockerfile: Dockerfile
+#    image: digitalocean.com/webserver:latest
+#    container_name: webserver
+#    restart: unless-stopped
+#    env_file: 
+#        - global_dev.env
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    volumes:
+#      - nginxdata:/var/log/nginx
+#    depends_on:
+#      - flask
+#    networks:
+#      - frontend
 
 networks:
   frontend:
@@ -56,6 +58,4 @@ volumes:
   mongodbdata:
     driver: local
   appdata:
-    driver: local
-  nginxdata:
     driver: local

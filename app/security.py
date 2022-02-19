@@ -16,7 +16,7 @@ class User(object):
         return "User(id='%s')" % self.id
 
 
-users = [User(1, 'api-nlps@fed.fr', 'fDYNylik4lpEabK0Q1NV')]
+users = [User(1, JWT_USER_NAME, JWT_PASSWORD)]
 username_table = {u.username: u for u in users}
 userid_table = {u.id: u for u in users}
 

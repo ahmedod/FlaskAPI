@@ -1,6 +1,7 @@
 import os
 from mongoengine import connect
-from flask import Flask, request, jsonify
+from flask import Flask
+import requests
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
 
@@ -26,10 +27,7 @@ connect(alias='default', db=MONGODB_DATABASE, username=MONGODB_USERNAME,
 @application.route('/test')
 @jwt_required()
 def index():
-    return jsonify(
-        status=True,
-        message='Welcome to the Dockerized Flask MongoDB app!'
-    )
+    return {"status":True, "message":" Welcome too the Dockerized Flask MongoDB app!"}
 
 
 if __name__ == "__main__":
