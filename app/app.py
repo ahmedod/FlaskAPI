@@ -3,7 +3,6 @@ from mongoengine import connect
 from flask import Flask, request, jsonify
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
-from config import gcs_source_uri, gcs_destination_uri, bucket_name
 
 
 

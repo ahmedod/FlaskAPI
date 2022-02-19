@@ -16,16 +16,6 @@ class XmlException(Exception):
     pass
 
 
-class RespironicsException(Exception):
-    """ Respironics exception"""
-    pass
-
-
-class ResmedException(Exception):
-    """ Resmed exception"""
-    pass
-
-
 class ConnectionException(Exception):
     """ Connection DB exception"""
     pass
@@ -34,7 +24,4 @@ class ConnectionException(Exception):
 class WorkerException(Exception):
     """ workers exception"""
     pass
-
-
-
 
