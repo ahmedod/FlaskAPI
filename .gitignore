@@ -1,0 +1,2 @@
+app/__pycache__/*
+mongo/container_volumes/mongo/*
