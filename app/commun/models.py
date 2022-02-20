@@ -16,4 +16,4 @@ class ThesaurusDict(gj.Document):
     # {"collection":"Thesaurus"}
     name = StringField(max_length=20, Required=True)
     thesaurus_type = StringField(max_length=20, Required=True)
-    thesaurus_data = ListField()
+    thesaurus_data = ListField(StringField(max_length=300))
