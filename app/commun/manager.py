@@ -1,7 +1,6 @@
 """ Manage db module"""
 import datetime
-
-from exceptions import ExceptionModel
+from commun.exceptions import ExceptionModel
 
 
 class ManageDb:
@@ -10,10 +9,10 @@ class ManageDb:
     def __init__(self, model):
         self.model = model
 
-    def create(self, **kwargs):
+    def create(self, dict):
         """ Create method"""
         try:
-            return self.model(**kwargs).save()
+            return self.model(**dict).save()
         except Exception as err:
             raise ExceptionModel("ExceptionModel", err)
 

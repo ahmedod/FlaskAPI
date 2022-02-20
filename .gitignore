@@ -1,2 +1,4 @@
 app/__pycache__/*
 mongo/container_volumes/mongo/*
+app/API/__pycache__/*
+app/commun/__pycache__/*
