@@ -19,7 +19,7 @@ class ThesaurusHandler(ManageDb):
         super().__init__(self.model)
 
     def add_element_to_thesaurus(self, element, thesaurus_name):
-        """TO DO 
+        """TO DO
         """
         try:
             data = self.model.objects(name=thesaurus_name).get()
@@ -28,11 +28,12 @@ class ThesaurusHandler(ManageDb):
         except ExceptionModel as err:
             raise ExceptionModel("query failed : {}".format(err))
 
-
     def delete_element_from_thesaurus(self, element, thesaurus_name):
-        """TO Do 
+        """TO Do
         """
         try:
-            self.model.objects(name=thesaurus_name).update(pull__thesaurus_data=element)
+            self.model.objects(
+                name=thesaurus_name).update(
+                pull__thesaurus_data=element)
         except ExceptionModel as err:
             raise ExceptionModel("query failed : {}".format(err))

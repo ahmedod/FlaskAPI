@@ -24,4 +24,3 @@ class ConnectionException(Exception):
 class WorkerException(Exception):
     """ workers exception"""
     pass
-

@@ -5,7 +5,7 @@ from commun.handler_model import ThesaurusHandler
 
 
 def insert_thesaurus(data_dict):
-    """TO DO 
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
     try:
@@ -16,7 +16,7 @@ def insert_thesaurus(data_dict):
 
 
 def get_all_thesaurus():
-    """TO DO 
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
     try:
@@ -27,7 +27,7 @@ def get_all_thesaurus():
 
 
 def get_thesaurus_by_id(data):
-    """TO DO 
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
     try:
@@ -38,7 +38,7 @@ def get_thesaurus_by_id(data):
 
 
 def purge_thesaurus():
-    """TO DO 
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
     try:
@@ -49,7 +49,7 @@ def purge_thesaurus():
 
 
 def delete_thesaurus_by_id(id):
-    """TO DO 
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
     try:
@@ -65,17 +65,21 @@ def add_element(element, thesaurus_name):
 
     thesaurus = ThesaurusHandler()
     for item in element:
-        thesaurus.add_element_to_thesaurus(item, thesaurus_name)
+        try:
+            thesaurus.add_element_to_thesaurus(item, thesaurus_name)
+        except Exception as err:
+            raise Exception("data fetching failed: {}".format(err))       
     message = "doc updated"
     return message
 
 
-def delete_element_from_thesaurus(elemnt, thesaurus_name):
-    """TO DO 
+def delete_element_from_thesaurus(element, thesaurus_name):
+    """TO DO
     """
     thesaurus = ThesaurusHandler()
-    try:
-        thesaurus.delete_element_from_thesaurus(elemnt, thesaurus_name)
-    except Exception as err:
-        raise Exception("data fetching failed: {}".format(err))
+    for item in element:
+        try:
+            thesaurus.delete_element_from_thesaurus(item, thesaurus_name)
+        except Exception as err:
+            raise Exception("data fetching failed: {}".format(err))
     return "delete success"

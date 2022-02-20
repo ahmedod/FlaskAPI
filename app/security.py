@@ -5,7 +5,6 @@ JWT_USER_NAME = os.environ.get("JWT_USER_NAME")
 JWT_PASSWORD = os.environ.get("JWT_PASSWORD")
 
 
-
 class User(object):
     def __init__(self, id, username, password):
         self.id = id
@@ -23,7 +22,8 @@ userid_table = {u.id: u for u in users}
 
 def authenticate(username, password):
     user = username_table.get(username, None)
-    if user and safe_str_cmp(user.password.encode('utf-8'), password.encode('utf-8')):
+    if user and safe_str_cmp(user.password.encode(
+            'utf-8'), password.encode('utf-8')):
         return user
 
 

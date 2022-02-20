@@ -9,7 +9,8 @@ from mongoengine import (CASCADE, BooleanField, ComplexDateTimeField,
                          EmbeddedDocumentField, IntField, ListField,
                          ReferenceField, StringField)
 
-class ThesaurusDict(gj.Document):   
+
+class ThesaurusDict(gj.Document):
     """
     TO DO .
     """
